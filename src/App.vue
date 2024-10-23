@@ -1,18 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div>
+    <GlobalHeader />
+    <router-view />
+  </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
-
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+<script setup lang="ts">
+import GlobalHeader from "./components/lv3/GlobalHeader.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <style lang="scss">
@@ -22,6 +17,7 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #f8f9fa; /* メインコンテンツの背景色を変更 */
+  min-height: 100vh; /* ビューポート全体の高さを確保 */
 }
 </style>
