@@ -38,10 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
 
-const userName = ref("John"); // TODO: ここに実際のユーザー名を設定するロジックを追加
+const userName = ref('John'); // TODO: ここに実際のユーザー名を設定するロジックを追加
 const isMenuOpen = ref(false);
 const router = useRouter();
 
@@ -58,21 +58,21 @@ const handleResize = () => {
 
 const goToUserSettings = () => {
   // TODO: ユーザー設定画面に遷移
-  console.log("ユーザー設定画面に遷移します");
+  console.log('ユーザー設定画面に遷移します');
 };
 
 const logout = () => {
   // TODO: ログアウト処理を実装
-  console.log("ログアウトしました");
-  router.push("/login");
+  console.log('ログアウトしました');
+  router.push('/login');
 };
 
 onMounted(() => {
-  window.addEventListener("resize", handleResize);
+  window.addEventListener('resize', handleResize);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", handleResize);
+  window.removeEventListener('resize', handleResize);
 });
 </script>
 

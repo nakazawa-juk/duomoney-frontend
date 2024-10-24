@@ -1,9 +1,9 @@
 module.exports = {
-  preset: "@vue/cli-plugin-unit-jest/presets/typescript",
+  preset: '@vue/cli-plugin-unit-jest/presets/typescript',
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/src/**/*.{js,vue,ts}"],
-  coverageReporters: ["html", "text-summary"],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,vue,ts}'],
+  coverageReporters: ['html', 'text-summary'],
   coveragePathIgnorePatterns: [
-    "src/main.ts", // ここでmain.tsを除外
+    'src/main.ts', // ここでmain.tsを除外
   ],
 };

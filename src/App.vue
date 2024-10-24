@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import GlobalHeader from "./components/lv3/GlobalHeader.vue";
-import { RouterView } from "vue-router";
+import GlobalHeader from './components/lv3/GlobalHeader.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="scss">
