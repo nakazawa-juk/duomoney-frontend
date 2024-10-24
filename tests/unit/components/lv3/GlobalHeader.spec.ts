@@ -1,6 +1,6 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, VueWrapper } from '@vue/test-utils';
 import GlobalHeader from '@/components/lv3/GlobalHeader.vue';
-import { useRouter } from 'vue-router';
+import { Router, useRouter } from 'vue-router';
 import { nextTick } from 'vue';
 
 // モックの設定
@@ -11,13 +11,13 @@ jest.mock('vue-router', () => ({
 }));
 
 describe('GlobalHeader.vue', () => {
-  let wrapper: any;
-  let router: any;
+  let wrapper: VueWrapper<typeof GlobalHeader>;
+  let router: Router;
 
   beforeEach(() => {
     jest.clearAllMocks();
     router = useRouter();
-    wrapper = shallowMount(GlobalHeader);
+    wrapper = shallowMount(GlobalHeader) as VueWrapper<typeof GlobalHeader>;
 
     // Set the initial data
     wrapper.vm.userName = 'テストユーザー';
