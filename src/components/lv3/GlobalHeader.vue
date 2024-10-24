@@ -39,9 +39,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRouter } from "vue-router";
 
 const userName = ref("John"); // TODO: ここに実際のユーザー名を設定するロジックを追加
 const isMenuOpen = ref(false);
+const router = useRouter();
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -62,8 +64,7 @@ const goToUserSettings = () => {
 const logout = () => {
   // TODO: ログアウト処理を実装
   console.log("ログアウトしました");
-  // TODO: ログインページへのリダイレクト
-  window.location.href = "/login";
+  router.push("/login");
 };
 
 onMounted(() => {
