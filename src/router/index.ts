@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HelloWorld from "@/pages/HelloWorld.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import HelloWorld from '@/pages/HelloWorld.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "HelloWorld",
+    path: '/',
+    name: 'HelloWorld',
     component: HelloWorld,
   },
 ];
