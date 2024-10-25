@@ -7,6 +7,20 @@ const routes: Array<RouteRecordRaw> = [
     name: 'HelloWorld',
     component: HelloWorld,
   },
+  { path: '/dashboard', component: { template: '<div>Dashboard</div>' } },
+  {
+    path: '/transaction/add',
+    component: { template: '<div>Add Transaction</div>' },
+  },
+  { path: '/transactions', component: { template: '<div>Transactions</div>' } },
+  { path: '/analysis', component: { template: '<div>Analysis</div>' } },
+  {
+    path: '/notifications',
+    component: { template: '<div>Notifications</div>' },
+  },
+  { path: '/signup', component: { template: '<div>Signup</div>' } },
+  { path: '/login', component: { template: '<div>Login</div>' } },
+  { path: '/settings', component: { template: '<div>Settings</div>' } },
 ];
 
 const router = createRouter({
@@ -14,4 +28,4 @@ const router = createRouter({
   routes,
 });
 
-export default router;
+export { routes, router };

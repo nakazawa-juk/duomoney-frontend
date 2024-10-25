@@ -25,12 +25,58 @@
     <div v-if="isMenuOpen" class="menu-overlay">
       <ul class="menu-list">
         <li @click="goToUserSettings">
-          <span>
-            {{ userName }}
-          </span>
+          <span>{{ userName }}</span>
         </li>
         <li @click="logout">
-          <span> ログアウト </span>
+          <span>ログアウト</span>
+        </li>
+        <li>
+          <router-link to="/dashboard">
+            <i class="bi bi-speedometer2"></i>
+            <span>ダッシュボード</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/transaction/add">
+            <i class="bi bi-plus-circle"></i>
+            <span>収入・支出の追加</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/transactions">
+            <i class="bi bi-list-ul"></i>
+            <span>収支一覧</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/analysis">
+            <i class="bi bi-graph-up"></i>
+            <span>家計分析</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/notifications">
+            <i class="bi bi-bell"></i>
+            <span>通知</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/signup">
+            <i class="bi bi-person-plus"></i>
+            <span>ユーザー登録</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/login">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>ログイン</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/settings">
+            <i class="bi bi-gear"></i>
+            <span>設定</span>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -127,16 +173,21 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
-.menu-list li {
+.menu-list li,
+.menu-list li a {
   padding: 10px 20px;
   display: block;
   cursor: pointer;
   color: #000;
   text-align: center;
+  text-decoration: none;
+  i {
+    padding-right: 5px;
+  }
 }
 
-.menu-list li:hover {
-  color: #0056b3;
+.menu-list li:hover,
+.menu-list li a:hover {
   background-color: #f8f9fa;
   color: #0056b3;
   cursor: pointer; /* ホバー時にカーソルをポインターに変更 */

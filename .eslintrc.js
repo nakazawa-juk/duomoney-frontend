@@ -15,8 +15,17 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'prettier/prettier': ['error', { singleQuote: true }],
     '@typescript-eslint/no-explicit-any': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        semi: true,
+        trailingComma: 'es5',
+        printWidth: 80,
+        tabWidth: 2,
+      },
+    ],
   },
   overrides: [
     {
