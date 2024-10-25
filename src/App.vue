@@ -34,7 +34,7 @@ import GlobalLeftMenu from './components/lv3/GlobalLeftMenu.vue';
 
 .content {
   flex: 1;
-  padding: 5px;
+  padding: 10px;
   margin-left: 250px; /* 左メニューの幅に合わせて調整 */
 }
 

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HelloWorld from '@/pages/HelloWorld.vue';
+import Signup from '@/pages/Signup.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,7 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/notifications',
     component: { template: '<div>Notifications</div>' },
   },
-  { path: '/signup', component: { template: '<div>Signup</div>' } },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup,
+  },
   { path: '/login', component: { template: '<div>Login</div>' } },
   { path: '/settings', component: { template: '<div>Settings</div>' } },
 ];
