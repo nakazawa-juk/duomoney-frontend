@@ -26,6 +26,7 @@ module.exports = {
         tabWidth: 2,
       },
     ],
+    'vue/multi-word-component-names': 'off',
   },
   overrides: [
     {
