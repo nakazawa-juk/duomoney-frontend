@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HelloWorld from '@/pages/HelloWorld.vue';
 import Signup from '@/pages/Signup.vue';
 import Login from '@/pages/Login.vue';
+import Invite from '@/pages/Invite.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -29,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/invite',
+    name: 'Invite',
+    component: Invite,
   },
   { path: '/settings', component: { template: '<div>Settings</div>' } },
 ];
