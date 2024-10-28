@@ -14,7 +14,7 @@ describe('Signup Page', () => {
   it('shows an error message if email is invalid', () => {
     cy.get('input#username').type('testuser');
     cy.get('input#email').type('invalid-email');
-    cy.get('input#password').type('password123');
+    cy.get('input#password').type('fidj9r3kre');
     cy.get('button#signup').click();
     cy.get('.error-message').should(
       'contain',
@@ -36,7 +36,7 @@ describe('Signup Page', () => {
   it('redirects to login page on successful signup', () => {
     cy.get('input#username').type('testuser');
     cy.get('input#email').type('test@example.com');
-    cy.get('input#password').type('password123');
+    cy.get('input#password').type('fidj9r3kre');
     cy.get('button#signup').click();
     cy.url().should('include', '/login');
   });

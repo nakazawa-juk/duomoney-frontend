@@ -1,5 +1,5 @@
 <template>
-  <div class="signup">
+  <div class="signup-container">
     <h2>ユーザー登録</h2>
     <form @submit.prevent="handleSignup">
       <div class="form-group">
@@ -78,7 +78,7 @@ const handleSignup = async () => {
 .signup {
   max-width: 400px;
   margin: 40px auto 0 auto;
-  padding: 20px;
+  padding: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
