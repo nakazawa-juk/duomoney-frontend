@@ -65,7 +65,7 @@ const handleSignup = async () => {
 
     // TODO: アカウント作成のロジックを実装（API呼び出し）
 
-    // 成功した場合、ログインページにリダイレクト
+    // 成功した場合、ログインページに遷移
     console.log('アカウント作成:', username.value, email.value, password.value);
     router.push('/login');
   } catch (error) {

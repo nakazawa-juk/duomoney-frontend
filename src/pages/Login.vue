@@ -40,7 +40,7 @@ const handleLogin = () => {
   // 失敗時には処理を止めてエラーメッセージを表示
   errorMessage.value = ''; // 新しい試行時にはエラーメッセージをクリア
   console.log('ログイン試行:', email.value, password.value);
-  // 成功時には別のページにリダイレクト
+  // 成功時には別のページに遷移
   router.push('/dashboard');
 };
 </script>
