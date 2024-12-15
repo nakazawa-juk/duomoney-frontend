@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <nav
+    class="navbar navbar-expand-sm navbar-light bg-light"
+    v-click-outside="closeMenu"
+  >
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/">
         <img src="@/assets/logo.png" alt="DuoMoney Logo" class="logo" />
@@ -30,52 +33,46 @@
         <li @click="logout">
           <span>ログアウト</span>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/dashboard">
             <i class="bi bi-speedometer2"></i>
             <span>ダッシュボード</span>
           </router-link>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/transaction/add">
             <i class="bi bi-plus-circle"></i>
             <span>収入・支出の追加</span>
           </router-link>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/transactions">
             <i class="bi bi-list-ul"></i>
             <span>収支一覧</span>
           </router-link>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/analysis">
             <i class="bi bi-graph-up"></i>
             <span>家計分析</span>
           </router-link>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/notifications">
             <i class="bi bi-bell"></i>
             <span>通知</span>
           </router-link>
         </li>
-        <li>
+        <li @click="closeMenu">
           <router-link to="/signup">
             <i class="bi bi-person-plus"></i>
             <span>ユーザー登録</span>
           </router-link>
         </li>
-        <li>
-          <router-link to="/login">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <span>ログイン</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/settings">
+        <li @click="closeMenu">
+          <router-link to="/setting">
             <i class="bi bi-gear"></i>
-            <span>設定</span>
+            <span>ユーザー設定</span>
           </router-link>
         </li>
       </ul>
@@ -95,6 +92,10 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+
 const handleResize = () => {
   if (window.innerWidth >= 576) {
     // 576pxはBootstrapのsmブレークポイント
@@ -103,11 +104,13 @@ const handleResize = () => {
 };
 
 const goToUserSettings = () => {
-  // TODO: ユーザー設定画面に遷移
+  closeMenu();
   console.log('ユーザー設定画面に遷移します');
+  router.push('/setting');
 };
 
 const logout = () => {
+  closeMenu();
   // TODO: ログアウト処理を実装
   console.log('ログアウトしました');
   router.push('/login');

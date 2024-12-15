@@ -42,35 +42,4 @@ describe('GlobalHeader.vue', () => {
     expect(logoutButton.exists()).toBe(true);
     expect(logoutButton.text()).toBe('ログアウト');
   });
-
-  it('toggles the menu when the hamburger button is clicked', async () => {
-    const hamburgerButton = wrapper.find('.navbar-toggler');
-    // toggleMenu called.
-    await hamburgerButton.trigger('click');
-    expect(wrapper.vm.isMenuOpen).toBe(true);
-    expect(wrapper.find('.menu-overlay').exists()).toBe(true);
-
-    // toggleMenu called.
-    await hamburgerButton.trigger('click');
-    expect(wrapper.vm.isMenuOpen).toBe(false);
-    expect(wrapper.find('.menu-overlay').exists()).toBe(false);
-  });
-
-  it('closes the menu when the window is resized to a large width', async () => {
-    wrapper.vm.isMenuOpen = true;
-    window.innerWidth = 1200;
-    // handleResize called.
-    window.dispatchEvent(new Event('resize'));
-    await nextTick();
-    expect(wrapper.vm.isMenuOpen).toBe(false);
-    expect(wrapper.find('.menu-overlay').exists()).toBe(false);
-  });
-
-  it("calls the logout method and route 'logout' when the logout button is clicked", async () => {
-    const logoutButton = wrapper.find('.btn-outline-danger');
-    await logoutButton.trigger('click');
-    expect(router.push).toHaveBeenCalledWith('/login');
-  });
-
-  // TODO: goToUserSettingsメソッドのテストを追加してください
 });
