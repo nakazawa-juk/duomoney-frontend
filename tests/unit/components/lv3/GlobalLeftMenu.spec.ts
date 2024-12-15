@@ -56,8 +56,7 @@ describe('GlobalLeftMenu.vue', () => {
       { path: '/analysis', icon: 'bi-graph-up', text: '家計分析' },
       { path: '/notifications', icon: 'bi-bell', text: '通知' },
       { path: '/signup', icon: 'bi-person-plus', text: 'ユーザー登録' },
-      { path: '/login', icon: 'bi-box-arrow-in-right', text: 'ログイン' },
-      { path: '/settings', icon: 'bi-gear', text: '設定' },
+      { path: '/setting', icon: 'bi-gear', text: 'ユーザー設定' },
     ];
 
     for (const link of links) {

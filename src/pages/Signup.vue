@@ -77,7 +77,7 @@ const handleSignup = async () => {
 </script>
 
 <style scoped>
-.signup {
+.signup-container {
   max-width: 400px;
   margin: 40px auto 0 auto;
   padding: 1em;

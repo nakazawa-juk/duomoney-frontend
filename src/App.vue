@@ -2,8 +2,8 @@
   <div id="app">
     <GlobalHeader />
     <div class="main-content">
-      <GlobalLeftMenu />
-      <div class="content">
+      <GlobalLeftMenu v-if="!isHiddenLeftMenuPath" />
+      <div :class="{ content: true, 'full-width': isHiddenLeftMenuPath }">
         <router-view />
       </div>
     </div>
@@ -11,8 +11,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import GlobalHeader from './components/lv3/GlobalHeader.vue';
 import GlobalLeftMenu from './components/lv3/GlobalLeftMenu.vue';
+import { HIDDEN_LEFT_MENU_PATHS } from '@/constants';
+
+const route = useRoute();
+const isHiddenLeftMenuPath = computed(() =>
+  HIDDEN_LEFT_MENU_PATHS.includes(route.path)
+);
 </script>
 
 <style lang="scss">
@@ -36,6 +44,10 @@ import GlobalLeftMenu from './components/lv3/GlobalLeftMenu.vue';
   flex: 1;
   padding: 10px;
   margin-left: 250px; /* 左メニューの幅に合わせて調整 */
+}
+
+.full-width {
+  margin-left: 0;
 }
 
 .left-menu.menu-collapsed + .content {
