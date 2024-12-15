@@ -3,6 +3,7 @@ import HelloWorld from '@/pages/HelloWorld.vue';
 import Signup from '@/pages/Signup.vue';
 import Login from '@/pages/Login.vue';
 import Invite from '@/pages/Invite.vue';
+import Setting from '@/pages/Setting.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -36,7 +37,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Invite',
     component: Invite,
   },
-  { path: '/settings', component: { template: '<div>Settings</div>' } },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: Setting,
+  },
 ];
 
 const router = createRouter({
