@@ -59,19 +59,13 @@
                 <span v-if="!isCollapsed">ユーザー登録</span>
               </router-link>
             </li>
-            <li :class="{ active: isActive('/login') }">
-              <router-link to="/login">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span v-if="!isCollapsed">ログイン</span>
+            <li :class="{ active: isActive('/setting') }">
+              <router-link to="/setting">
+                <i class="bi bi-gear"></i>
+                <span v-if="!isCollapsed">ユーザー設定</span>
               </router-link>
             </li>
           </ul>
-        </li>
-        <li :class="{ active: isActive('/settings') }">
-          <router-link to="/settings">
-            <i class="bi bi-gear"></i>
-            <span v-if="!isCollapsed">設定</span>
-          </router-link>
         </li>
       </ul>
     </nav>
