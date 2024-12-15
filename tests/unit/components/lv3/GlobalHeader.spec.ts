@@ -1,7 +1,6 @@
 import { mount, VueWrapper } from '@vue/test-utils';
 import GlobalHeader from '@/components/lv3/GlobalHeader.vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { nextTick } from 'vue';
 import { routes } from '@/router';
 
 describe('GlobalHeader.vue', () => {
