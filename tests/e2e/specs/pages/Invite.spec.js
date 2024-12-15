@@ -14,6 +14,6 @@ describe('Invite Page', () => {
   it('redirects to invite page on successful invite', () => {
     cy.get('input#email').type('test@example.com');
     cy.get('button#invite').click();
-    cy.url().should('include', '/settings');
+    cy.url().should('include', '/setting');
   });
 });
