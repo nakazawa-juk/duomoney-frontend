@@ -64,6 +64,8 @@ const handleSignup = async () => {
     }
 
     // TODO: アカウント作成のロジックを実装（API呼び出し）
+    // TODO: API呼び出し実装時に、catch句のテストコードも実装する。
+    errorMessage.value = ''; // 新しい試行時にはエラーメッセージをクリア
 
     // 成功した場合、ログインページに遷移
     console.log('アカウント作成:', username.value, email.value, password.value);

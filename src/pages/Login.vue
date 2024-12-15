@@ -31,17 +31,23 @@ const errorMessage = ref('');
 const router = useRouter();
 
 const handleLogin = () => {
-  // バリデーションチェック
-  if (!email.value || !password.value) {
-    errorMessage.value = 'メールアドレス、パスワードを入力してください。';
-  }
+  try {
+    // バリデーションチェック
+    if (!email.value || !password.value) {
+      errorMessage.value = 'メールアドレス、パスワードを入力してください。';
+      return;
+    }
 
-  // TODO: ログイン処理のロジックを実装（API呼び出し）
-  // 失敗時には処理を止めてエラーメッセージを表示
-  errorMessage.value = ''; // 新しい試行時にはエラーメッセージをクリア
-  console.log('ログイン試行:', email.value, password.value);
-  // 成功時には別のページに遷移
-  router.push('/dashboard');
+    // TODO: ログイン処理のロジックを実装（API呼び出し）
+    // TODO: API呼び出し実装時に、catch句のテストコードも実装する。
+    // 失敗時には処理を止めてエラーメッセージを表示
+    errorMessage.value = ''; // 新しい試行時にはエラーメッセージをクリア
+    console.log('ログイン試行:', email.value, password.value);
+    // 成功時には別のページに遷移
+    router.push('/dashboard');
+  } catch (error) {
+    errorMessage.value = 'ログインに失敗しました。';
+  }
 };
 </script>
 

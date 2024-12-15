@@ -24,19 +24,25 @@ const errorMessage = ref('');
 const router = useRouter();
 
 const handleInvite = () => {
-  // バリデーションチェック
-  if (!email.value) {
-    errorMessage.value = 'メールアドレスを入力してください。';
-    return;
+  try {
+    // バリデーションチェック
+    if (!email.value) {
+      errorMessage.value = 'メールアドレスを入力してください。';
+      return;
+    }
+    if (!validateEmail(email.value)) {
+      errorMessage.value = '有効なメールアドレスを入力してください。';
+      return;
+    }
+    // TODO: 招待メール送信のロジックを実装（API呼び出し）
+    // TODO: API呼び出し実装時に、catch句のテストコードも実装する。
+    errorMessage.value = ''; // 新しい試行時にはエラーメッセージをクリア
+    console.log('招待メール送信:', email.value);
+    // 成功時にはユーザー設定画面に遷移
+    router.push('/setting');
+  } catch (error) {
+    errorMessage.value = 'パートナー招待に失敗しました。';
   }
-  if (!validateEmail(email.value)) {
-    errorMessage.value = '有効なメールアドレスを入力してください。';
-    return;
-  }
-  // TODO: 招待メール送信のロジックを実装（API呼び出し）
-  console.log('招待メール送信:', email.value);
-  // 成功時にはユーザー設定画面に遷移
-  router.push('/settings');
 };
 </script>
 
