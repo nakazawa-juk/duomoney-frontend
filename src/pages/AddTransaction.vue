@@ -25,10 +25,13 @@
           id="category"
           class="form-control"
         >
-          <option value="food">食費</option>
-          <option value="transport">交通費</option>
-          <option value="entertainment">娯楽</option>
-          <!-- 他のカテゴリを追加 -->
+          <option
+            v-for="category in TRANSACTION_CATEGORYS"
+            :key="category.value"
+            :value="category.value"
+          >
+            {{ category.name }}
+          </option>
         </select>
       </div>
       <div class="form-group">
@@ -62,6 +65,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { TRANSACTION_CATEGORYS } from '@/constants';
 
 const transaction = ref<{
   type: 'income' | 'expense';
