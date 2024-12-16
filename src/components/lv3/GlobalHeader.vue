@@ -1,13 +1,15 @@
 <template>
-  <nav
-    class="navbar navbar-expand-sm navbar-light bg-light"
-    v-click-outside="closeMenu"
-  >
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/">
         <img src="@/assets/logo.png" alt="DuoMoney Logo" class="logo" />
       </router-link>
-      <button class="navbar-toggler" type="button" @click="toggleMenu">
+      <button
+        class="navbar-toggler"
+        type="button"
+        @click="toggleMenu"
+        v-click-outside="closeMenu"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
