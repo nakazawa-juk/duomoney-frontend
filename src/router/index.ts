@@ -5,6 +5,7 @@ import Login from '@/pages/Login.vue';
 import Invite from '@/pages/Invite.vue';
 import Setting from '@/pages/Setting.vue';
 import AddTransaction from '@/pages/AddTransaction.vue';
+import TransactionList from '@/pages/TransactionList.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,7 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'AddTransaction',
     component: AddTransaction,
   },
-  { path: '/transactions', component: { template: '<div>Transactions</div>' } },
+  {
+    path: '/transactions',
+    name: 'TransactionList',
+    component: TransactionList,
+  },
   { path: '/analysis', component: { template: '<div>Analysis</div>' } },
   {
     path: '/notifications',
